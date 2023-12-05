@@ -1,0 +1,30 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 20px;
+    /* background-color: rgb(48, 44, 44); */
+    /* margin: 0%; */
+    /* width: 70pc; */
+    margin: 2pc;
+    position: relative;
+    height: 33px;
+  }
+  
+  input {
+    flex: 1; /* Take up remaining space */
+    padding: 6px;
+    border: none;
+    border-radius: 18px; /* Match the parent's border-radius */
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color:lightblue; /* Button background color */
+    color: rgb(48, 44, 44);;
+    border-radius: 10px; /* Adding border-radius for a curved appearance */
+    cursor: pointer;
+  }
+  

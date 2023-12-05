@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: lightblue;
+    padding: 10px;
+  }
+  
+  .title {
+    font-size: 28px;
+    /* margin-left: 12px; */
+  }
+  .logo-and-title {
+    display: flex;
+    align-items: center;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: lightblue;
+   }
+  
+    img {
+    width: 47px; /* Adjust the width as needed */
+    margin-top: 7px;
+  }
+  
