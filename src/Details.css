@@ -1,3 +1,32 @@
 body{
     background-color: rgb(48, 44, 44);
   }
+  .details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .image-container {
+    flex: 1;
+  }
+  
+  .image-container img {
+    width: 70%;
+    height: 90%;
+  }
+  
+  .info-container {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .info-container p {
+    margin: 10px 0;
+    font-size: 22px;
+    color: white;
+  }
+  h2{
+    color: lightblue;
+  }

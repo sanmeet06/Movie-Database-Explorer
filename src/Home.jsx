@@ -1,11 +1,16 @@
 import App from './App';
-import {React, useState,useEffect } from 'react';
+import React,{ useState,useEffect } from 'react';
+import { Link, useLocation,useNavigate } from 'react-router-dom';
 import Card from './Card';
-
-const Home =() =>{
+import SearchBar from './SearchBar';
+import Header from './Header';
+import './Home.css'
+const Home =({addToFavorites, favorites}) =>{
     const [movies, setMovies] = useState([]);
+   
     const searchMovies = async(title) =>{
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?&page=1&query=${title}`,
+      const url = `https://api.themoviedb.org/3/search/movie?&page=1&query=${title}`;
+      const response = await fetch(url,
       {
         method: 'GET',
         headers: {
@@ -21,15 +26,28 @@ const Home =() =>{
   useEffect(()=>{
     searchMovies('spiderman');
   },[])
+  
   const handleSearch = (searchText) => {
     searchMovies(searchText);
   };
+
     return(
     <div>
-        {movies.map((movie) => (
-          <Card key={movie.id} {...movie} />
-        ))}
-    </div>);
+        <Header/>
+        <SearchBar onSearch={handleSearch}/>
+            {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((movie) => (
+            <Link key={movie.id} to={`/details/${movie.id}`} state={{ ...movie }}>
+            <Card key={movie.id} movie={movie} addToFavorites={addToFavorites} />
+            </Link>
+          ))}
+        </div>
+      ) : (<div className='empty'>
+            <h1>No movies found with above name. Please try again!!</h1>
+      </div>)} 
+      </div>
+    );
 }
 
 export default Home;
