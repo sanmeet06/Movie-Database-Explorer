@@ -98,3 +98,12 @@
 .hoverButton:hover {
     background-color: #2980b9;
 }
+.fav{
+  justify-content: center;
+  display: flex;
+}
+.noFav{
+  justify-content: center;
+  display: flex;
+  color: white;
+}
